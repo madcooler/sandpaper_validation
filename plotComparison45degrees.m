@@ -1,6 +1,6 @@
-function plotComparison45Degrees
+function plotComparison45Degrees(index)
 
-index = 5;
+% index = 5;
 plotAverageIntensity = 0;
 
 dot = './'
@@ -114,7 +114,7 @@ if index == 10
     
 end
 
-filename = [src,'_comparison_ia45'];
+filename = [src,'_DOLP_comparison_ia45'];
 
 file     = [loc,filename,'.png'];
 file_fig = [loc,filename,'.fig'];

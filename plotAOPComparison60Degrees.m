@@ -1,7 +1,7 @@
-function plotComparison60Degrees
+function plotComparison60Degrees(index)
 
 
-index = 5;
+% index = 5;
 plotAverageIntensity = 0;
 
 dot = './';
@@ -10,7 +10,7 @@ if index == 1
     src = 'coated_tape_data';
     loc = [dot,src,'/'];
     str_imp      =[loc,'imp_coated_tape_ia60.mat'];
-    str_measured =[loc,'coated_tape_ia60_new.mat'];
+    str_measured =[loc,'coated_tape_ia60.mat'];
     range = [1:7];
     x_imp = [45:5:75];
     x = [45:5:75];
@@ -117,7 +117,7 @@ if index == 4
     range = [1]
 end
 
-filename = [src,'_comparison_ia60'];
+filename = [src,'_AOP_comparison_ia60'];
 
 file     = [loc,filename,'.png'];
 file_fig = [loc,filename,'.fig'];

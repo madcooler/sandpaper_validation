@@ -1,6 +1,6 @@
-function plotComparison30Degrees
+function plotComparison30Degrees(index)
 
-index = 5;
+% index = 5;
 plotAverageIntensity = 0;
 
 dot = './'
@@ -110,7 +110,7 @@ if index == 10
     
 end
 
-filename = [src,'_comparison_ia30'];
+filename = [src,'_DOLP_comparison_ia30'];
 
 file     = [loc,filename,'.png'];
 file_fig = [loc,filename,'.fig'];

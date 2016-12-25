@@ -8,13 +8,14 @@ function dol
 %src = './coated_sandpaper_depolarising_data/'
 
 
-root = './uncoated_tape_data/';
-root = './coated_sandpaper_data/';
-root = './diffuse/';
-root = './glass_data/';
-root = './uncoated_tape_data/';
+% root = './uncoated_tape_data/';
+% root = './coated_sandpaper_data/';
+% root = './diffuse/';
+% root = './glass_data/';
+% root = './uncoated_tape_data/';
 %root = './uncoated_sandpaper_data/';
-root = './coated_sandpaper_c1000_data/';
+% root = './coated_sandpaper_c1000_data/';
+root = './coated_tape_data/';
 ia_s = [30;45;60];
 
 
@@ -26,11 +27,11 @@ for k = 1 : length(ia_s)
     filehead = 'sandpaper';
     filehead = 'diffuse';
     filehead = 'coated_sandpaper';
-    %filehead = 'uncoated_tape';
+    filehead = 'coated_tape';
     ia = num2str(ia_s(k));
     %ia = '_equal';
-    rawdata = [root,filehead,'_ia',ia,'_raw.mat'];
-    matfile = [root,filehead,'_ia',ia,'.mat'];
+    rawdata = [root,filehead,'_ia',ia,'_new_raw.mat'];
+    matfile = [root,filehead,'_ia',ia,'new.mat'];
     
     load(rawdata);
 
@@ -144,6 +145,7 @@ for k = 1 : length(ia_s)
         info_90_135(i,14)   = info_90_135(i,13)/specular_intensity_90135;
         info_90_m45(i,14)   = info_90_m45(i,13)/specular_intensity_90m45;
         
+
     end
 
     save(matfile,'info_0_0','info_45_45','info_90_90','info_135_135','info_0_45','info_0_m45','info_90_135','info_90_m45');

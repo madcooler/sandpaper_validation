@@ -1,7 +1,7 @@
-function plotComparison60Degrees
+function plotComparison60Degrees(index)
 
 
-index = 0;
+% index = 0;
 plotAverageIntensity = 0;
 
 dot = './';
@@ -117,7 +117,7 @@ if index == 4
     range = [1]
 end
 
-filename = [src,'_comparison_ia60'];
+filename = [src,'_DOLP_comparison_ia60'];
 
 file     = [loc,filename,'.png'];
 file_fig = [loc,filename,'.fig'];

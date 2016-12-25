@@ -2,13 +2,13 @@ function processImpData
 
 
 ia_s = [45;60;30];
-step = 31;
+step = 7;
 
-%src = './coated_tape_data/';
+ src = './coated_tape_data/';
 %
-src = './uncoated_tape_data/';
+% src = './uncoated_tape_data/';
 %src = './uncoated_tape_data/';
-src = './coated_sandpaper_c1000_data/';
+%  src = './coated_sandpaper_c1000_data/';
 %src = './glass_data/'
 
 %src = './diffuse_gold_beckmann/';
@@ -22,10 +22,10 @@ for i = 1:size
     ia = num2str(ia_s(i));
     str         = [src , 'data_ia_',ia,'.txt'];
     %str_save    = [src , 'imp_uncoated_tape_ia',ia,'.mat'];
-    %str_save    = [src , 'imp_coated_tape_ia',ia,'.mat'];
+     str_save    = [src , 'imp_coated_tape_ia',ia,'.mat'];
     %str_save    = [src , 'imp_coated_sandpaper_ia',ia,'.mat'];
-    str_save    = [src , 'imp_glass_ia',ia,'.mat'];
-    str_save    = [src , 'imp_coated_sandpaper_ia',ia,'.mat'];
+%     str_save    = [src , 'imp_glass_ia',ia,'.mat'];
+%     str_save    = [src , 'imp_coated_sandpaper_ia',ia,'.mat'];
     %str_save    = [src , 'imp_diffuse_gold_roughness1.0_ia',ia,'.mat'];
     %str_save    = [src , 'imp_sf_r0.1_dp0.5_ia',ia,'.mat'];
     %str_save    = [src , 'imp_coated_tape_dp0.2_ia',ia,'.mat'];
@@ -50,14 +50,14 @@ for i = 1:size
 
     pair = length(data(:,8))/step;
 
-    imp_info_0_0 = zeros(step,12);
-    imp_info_45_45 = zeros(step,12);
-    imp_info_90_90 = zeros(step,12);
-    imp_info_135_135 = zeros(step,12);
-    imp_info_0_45 = zeros(step,12);
-    imp_info_0_m45 = zeros(step,12);
-    imp_info_90_m45 = zeros(step,12);
-    imp_info_90_135 = zeros(step,12);
+    imp_info_0_0 = zeros(step,13);
+    imp_info_45_45 = zeros(step,13);
+    imp_info_90_90 = zeros(step,13);
+    imp_info_135_135 = zeros(step,13);
+    imp_info_0_45 = zeros(step,13);
+    imp_info_0_m45 = zeros(step,13);
+    imp_info_90_m45 = zeros(step,13);
+    imp_info_90_135 = zeros(step,13);
 
     i = 1 ;
     indexBase = (i-1)*step;
