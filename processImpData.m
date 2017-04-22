@@ -1,14 +1,14 @@
 function processImpData
 
 
-ia_s = [45;60;30];
-step = 7;
+ia_s = [30;45;60];
+step = 31;
 
- src = './coated_tape_data/';
+%  src = './coated_tape_data/';
 %
 % src = './uncoated_tape_data/';
 %src = './uncoated_tape_data/';
-%  src = './coated_sandpaper_c1000_data/';
+ src = './coated_sandpaper_c1000_data/';
 %src = './glass_data/'
 
 %src = './diffuse_gold_beckmann/';
@@ -22,8 +22,8 @@ for i = 1:size
     ia = num2str(ia_s(i));
     str         = [src , 'data_ia_',ia,'.txt'];
     %str_save    = [src , 'imp_uncoated_tape_ia',ia,'.mat'];
-     str_save    = [src , 'imp_coated_tape_ia',ia,'.mat'];
-    %str_save    = [src , 'imp_coated_sandpaper_ia',ia,'.mat'];
+%      str_save    = [src , 'imp_coated_tape_ia',ia,'.mat'];
+    str_save    = [src , 'imp_coated_sandpaper_ia',ia,'.mat'];
 %     str_save    = [src , 'imp_glass_ia',ia,'.mat'];
 %     str_save    = [src , 'imp_coated_sandpaper_ia',ia,'.mat'];
     %str_save    = [src , 'imp_diffuse_gold_roughness1.0_ia',ia,'.mat'];
@@ -100,19 +100,19 @@ for i = 1:size
     endindex   = indexBase+step;
     imp_info_0_m45 = data(startindex:endindex,:);
     
-    i =7;
-
-    indexBase = (i-1)*step;
-    startindex = indexBase+1;
-    endindex   = indexBase+step;
-    imp_info_90_135 = data(startindex:endindex,:);
-    
-    i =8;
-
-    indexBase = (i-1)*step;
-    startindex = indexBase+1;
-    endindex   = indexBase+step;
-    imp_info_90_m45 = data(startindex:endindex,:);
+%     i =7;
+% 
+%     indexBase = (i-1)*step;
+%     startindex = indexBase+1;
+%     endindex   = indexBase+step;
+%     imp_info_90_135 = data(startindex:endindex,:);
+%     
+%     i =8;
+% 
+%     indexBase = (i-1)*step;
+%     startindex = indexBase+1;
+%     endindex   = indexBase+step;
+%     imp_info_90_m45 = data(startindex:endindex,:);
     
     
     mid = round(step/2);
@@ -123,8 +123,8 @@ for i = 1:size
     specular_intensity_135135   = imp_info_135_135(mid,13);
     specular_intensity_045      = imp_info_0_45(mid,13);
     specular_intensity_0m45     = imp_info_0_m45(mid,13);
-    specular_intensity_90135    = imp_info_90_135(mid,13);
-    specular_intensity_90m45    = imp_info_90_m45(mid,13);
+%     specular_intensity_90135    = imp_info_90_135(mid,13);
+%     specular_intensity_90m45    = imp_info_90_m45(mid,13);
 
 for i = 1 : step
     imp_info_0_0(i,14)      = imp_info_0_0(i,13)/specular_intensity_00;
@@ -133,8 +133,8 @@ for i = 1 : step
     imp_info_135_135(i,14)  = imp_info_135_135(i,13)/specular_intensity_135135;
     imp_info_0_45(i,14)     = imp_info_0_45(i,13)/specular_intensity_045;
     imp_info_0_m45(i,14)    = imp_info_0_m45(i,13)/specular_intensity_0m45;
-    imp_info_90_135(i,14)   = imp_info_90_135(i,13)/specular_intensity_90135;
-    imp_info_90_m45(i,14)   = imp_info_90_m45(i,13)/specular_intensity_90m45;
+%     imp_info_90_135(i,14)   = imp_info_90_135(i,13)/specular_intensity_90135;
+%     imp_info_90_m45(i,14)   = imp_info_90_m45(i,13)/specular_intensity_90m45;
     
     imp_info_0_0(i,15)      = abs( 180 * atan(imp_info_0_0(i,11) / imp_info_0_0(i,10))/(2*pi));
     imp_info_45_45(i,15)    = abs(180 * atan(imp_info_45_45(i,11) / imp_info_45_45(i,10))/(2*pi));
@@ -143,13 +143,13 @@ for i = 1 : step
     imp_info_90_90(i,15)    = abs(180 * atan(imp_info_90_90(i,11) / imp_info_90_90(i,10))/(2*pi));
     imp_info_135_135(i,15)  = abs(180 * atan(imp_info_135_135(i,11) / imp_info_135_135(i,10))/(2*pi));
     imp_info_0_m45(i,15)    = abs(180 * atan(imp_info_0_m45(i,11) / imp_info_0_m45(i,10))/(2*pi));
-    imp_info_90_135(i,15)   = abs(180 * atan(imp_info_90_135(i,11) / imp_info_90_135(i,10))/(2*pi));
-    imp_info_90_m45(i,15)   = abs(180 * atan(imp_info_90_m45(i,11) / imp_info_90_m45(i,10))/(2*pi));
+%     imp_info_90_135(i,15)   = abs(180 * atan(imp_info_90_135(i,11) / imp_info_90_135(i,10))/(2*pi));
+%     imp_info_90_m45(i,15)   = abs(180 * atan(imp_info_90_m45(i,11) / imp_info_90_m45(i,10))/(2*pi));
     
     
 end
-    
-    save(str_save,'imp_info_0_0','imp_info_45_45','imp_info_90_90','imp_info_135_135','imp_info_0_45','imp_info_0_m45','imp_info_90_135','imp_info_90_m45');
+    save(str_save,'imp_info_0_0','imp_info_45_45','imp_info_90_90','imp_info_135_135','imp_info_0_45','imp_info_0_m45');
+%     save(str_save,'imp_info_0_0','imp_info_45_45','imp_info_90_90','imp_info_135_135','imp_info_0_45','imp_info_0_m45','imp_info_90_135','imp_info_90_m45');
     
 end
 

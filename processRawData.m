@@ -14,8 +14,8 @@ function dol
 % root = './glass_data/';
 % root = './uncoated_tape_data/';
 %root = './uncoated_sandpaper_data/';
-% root = './coated_sandpaper_c1000_data/';
-root = './coated_tape_data/';
+root = './coated_sandpaper_c1000_data/';
+% root = './coated_tape_data/';
 ia_s = [30;45;60];
 
 
@@ -27,11 +27,11 @@ for k = 1 : length(ia_s)
     filehead = 'sandpaper';
     filehead = 'diffuse';
     filehead = 'coated_sandpaper';
-    filehead = 'coated_tape';
+%     filehead = 'coated_tape';
     ia = num2str(ia_s(k));
     %ia = '_equal';
-    rawdata = [root,filehead,'_ia',ia,'_new_raw.mat'];
-    matfile = [root,filehead,'_ia',ia,'new.mat'];
+    rawdata = [root,filehead,'_ia',ia,'_raw.mat'];
+    matfile = [root,filehead,'_ia',ia,'.mat'];
     
     load(rawdata);
 

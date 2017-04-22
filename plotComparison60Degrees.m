@@ -1,7 +1,7 @@
 function plotComparison60Degrees(index)
 
 
-% index = 0;
+%  index = 1;
 plotAverageIntensity = 0;
 
 dot = './';
@@ -11,9 +11,9 @@ if index == 1
     loc = [dot,src,'/'];
     str_imp      =[loc,'imp_coated_tape_ia60.mat'];
     str_measured =[loc,'coated_tape_ia60_new.mat'];
-    range = [1:7];
-    x_imp = [45:5:75];
-    x = [45:5:75];
+    range = [1:5];
+    x_imp = [45:5:65];
+    x = [45:5:65];
 end
 
 
@@ -56,7 +56,7 @@ if index == 5
     str_measured =[loc,'coated_sandpaper_ia60.mat'];
     range = [1:31];
     x_imp = [45:1:75];
-    x = [45 50 55 60 65 70 75]
+    x = [45 50 55 60 65 70 75];
 end
 
 
@@ -100,8 +100,7 @@ if index == 10
     str_measured =[loc,'coated_tape_ia60.mat'];
     range = [1:31];
     x_imp = [45:1:75];
-    x = [50 55 60 65 70]
-    
+    x = [50 55 60 65 70]   
 end
 
 %x = [20 25 30 35 40]
